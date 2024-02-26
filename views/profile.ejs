@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="/stylesheets/profile.css" />
+  </head>
+  <body>
+    <form id="uploadform" hidden action="/fileupload">
+      <input type="file" name="image" />
+    </form>
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <section>
+      <div class="container mt-2">
+        <div class="row">
+          <div class="col-md-3"></div>
+
+          <!--Profile Card 3-->
+          <div class="col-md-6">
+            <div class="card profile_card" style="border: none">
+              <div class="profile-thumb-block">
+                <!-- <div class="penciloneprofile">
+                  <button><i class="fa-solid fa-pencil" id="ionprofile"></i></button>
+                </div> -->
+                <img
+                  src="https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?q=80&w=1966&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  style="width: 150px; height: 150px"
+                  alt="profile-image"
+                  class="profile"
+                />
+              </div>
+              <div class="card-content">
+                <span style="font-size: 30px; font-weight: 600"
+                  >Kashyap Vadi</span
+                >
+                <p id="username">@username</p>
+                <button>Share</button>
+                <button>Edit profile</button>
+                <!-- <a href="#"><img src="https://kashyapvadi132.000webhostapp.com/uoload/profile1/edit.svg" class="edt_icon"></a>
+                     <div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i class="fa fa-google-plus"></i></a></div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="yourpins">
+      <div class="card2outer">
+        <div class="card2">
+          <img
+            src="https://images.unsplash.com/photo-1707343848552-893e05dba6ac?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Card image cap"
+          />
+          <div>
+            <p id="pin-title">All pins</p>
+            <p id="pin-count">17 pins</p>
+          </div>
+        </div>
+      </div>
+      <div class="card2outer">
+        <div class="card3">
+          <img
+            src="https://images.unsplash.com/photo-1708623460319-3f1d8865778a?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Card image cap"
+          />
+          <div>
+            <p id="pin-title">Some pins</p>
+            <p id="pin-count">2 pins</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/javascripts/profile.js"></script>
+  </body>
+</html>

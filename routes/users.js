@@ -7,6 +7,9 @@ var userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  fullname: {
+    type: String,
+  },
   email: {
     type: String,
     required: true,
@@ -14,6 +17,10 @@ var userSchema = new mongoose.Schema({
   },
   password: {
     type: String
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
   },
   posts: [{
     type: mongoose.Schema.Types.ObjectId,

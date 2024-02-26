@@ -11,11 +11,13 @@
   <div class="container ">
     <div class="content">
       <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo" class="img1" />
-      <p class="header">Log in to see more</p>
+      <p class="header">Welcome to Pinterest</p>
+      
       <form action="/register" method="post">
-        <input type="text" name="username" placeholder="Name" class="detail">
-        <input type="email" name="email" placeholder="Email" class="detail" /><br />
-        <input type="password" name="password" placeholder="Password" class="detail" />
+        <input type="text" name="username" placeholder="Username" class="detail" autocomplete="username" />
+        <input type="text" name="fullname" placeholder="Fullname" class="detail" autocomplete="name" />
+        <input type="email" name="email" placeholder="Email" class="detail" autocomplete="email" />
+        <input type="password" name="password" placeholder="Password" class="detail" autocomplete="new-password" />
         <h4>Forgot your password?</h4>  
         <input type="submit" class="btn int" value="Log in">
       </form>
@@ -33,7 +35,7 @@
           <b>Terms of Service, Privacy policy.</b>
         </p>
         <hr />
-        <p>Already on Pinterest? <a href="/signup" class="upbtn">Sign up</a></p>
+        <p>Already on Pinterest? <a href="/register" class="upbtn">Log in</a></p>
       </footer>
     </div>
   </div>
