@@ -22,6 +22,9 @@ var userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
+  profilePicture: {
+    type: String,
+  },
   posts: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Post'

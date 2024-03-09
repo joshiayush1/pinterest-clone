@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/profile.css" />
   </head>
   <body>
-    <form id="uploadform" hidden action="/fileupload">
+    <form id="uploadfile" hidden action="/fileupload" method="post" enctype="multipart/form-data">
       <input type="file" name="image" />
     </form>
     <link
@@ -35,7 +35,7 @@
                   <button><i class="fa-solid fa-pencil" id="ionprofile"></i></button>
                 </div> -->
                 <img
-                  src="https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?q=80&w=1966&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src="/images/uploads/<%= user.profilePicture %>"
                   style="width: 150px; height: 150px"
                   alt="profile-image"
                   class="profile"
@@ -47,7 +47,7 @@
                 >
                 <p id="username">@username</p>
                 <button>Share</button>
-                <button>Edit profile</button>
+                <button id="editdp">Edit profile</button>
                 <!-- <a href="#"><img src="https://kashyapvadi132.000webhostapp.com/uoload/profile1/edit.svg" class="edt_icon"></a>
                      <div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i class="fa fa-google-plus"></i></a></div> -->
               </div>
