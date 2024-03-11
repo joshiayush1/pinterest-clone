@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pinterest - India</title>
+  <title>Pinterest</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link rel="icon" href="/images/pinterest-icon.png">
 </head>
@@ -14,10 +14,10 @@
       <p class="header">Welcome to Pinterest</p>
       
       <form action="/register" method="post">
-        <input type="text" name="username" placeholder="Username" class="detail" autocomplete="username" />
-        <input type="text" name="fullname" placeholder="Fullname" class="detail" autocomplete="name" />
-        <input type="email" name="email" placeholder="Email" class="detail" autocomplete="email" />
-        <input type="password" name="password" placeholder="Password" class="detail" autocomplete="new-password" />
+        <input type="text" name="username" placeholder="Username" class="detail" autocomplete="username" required/>
+        <input type="text" name="fullname" placeholder="Fullname" class="detail" autocomplete="name" required/>
+        <input type="email" name="email" placeholder="Email" class="detail" autocomplete="email" required/>
+        <input type="password" name="password" placeholder="Password" class="detail" autocomplete="new-password" required/>
         <h4>Forgot your password?</h4>  
         <input type="submit" class="btn int" value="Log in">
       </form>
