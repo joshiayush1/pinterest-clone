@@ -51,11 +51,11 @@
               </div>
               <div class="card-content">
                 <span style="font-size: 30px; font-weight: 600"
-                  >Kashyap Vadi</span
+                  ><%= user.fullname %></span
                 >
-                <p id="username">@username</p>
-                <button>Share</button>
-                <button id="editdp">Edit profile</button>
+                <p id="username">@<%= user.username.toLowerCase(); %></p>
+                <button id="editdp">Edit profile picture</button>
+                <button>Add post</button>
                 <!-- <a href="#"><img src="https://kashyapvadi132.000webhostapp.com/uoload/profile1/edit.svg" class="edt_icon"></a>
                      <div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i class="fa fa-google-plus"></i></a></div> -->
               </div>
@@ -73,20 +73,8 @@
             alt="Card image cap"
           />
           <div>
-            <p id="pin-title">All pins</p>
-            <p id="pin-count">17 pins</p>
-          </div>
-        </div>
-      </div>
-      <div class="card2outer">
-        <div class="card3">
-          <img
-            src="https://images.unsplash.com/photo-1708623460319-3f1d8865778a?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Card image cap"
-          />
-          <div>
-            <p id="pin-title">Some pins</p>
-            <p id="pin-count">2 pins</p>
+            <p id="pin-title">Your Posts</p>
+            <p id="pin-count">0 pins</p>
           </div>
         </div>
       </div>

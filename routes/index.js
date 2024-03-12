@@ -36,10 +36,6 @@ router.get("/feed", function (req, res) {
   res.render("feed");
 });
 
-// router.get("/editprofile", function(req, res){
-//   res.render("editprofile");
-// })
-
 router.post("/register", function (req, res) {
   const { username, email, fullname, password } = req.body;
   const userData = new userModel({ username, email, fullname });
