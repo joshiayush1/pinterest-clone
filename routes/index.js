@@ -21,6 +21,11 @@ router.get("/profile", isLoggedIn, async function (req, res) {
   res.render("profile", {user});
 });
 
+router.get("/addpost", isLoggedIn, async function (req, res) {
+  const user = await userModel.findOne({username: req.session.passport.user});
+  res.render("add", {user});
+});
+
 router.get("/nav", isLoggedIn, async function (req, res) {
   res.render("nav");
 });

@@ -17,8 +17,8 @@
  color: black;
 }
 
-.outerDiv h6{
-    font-size: 17px;
+.outerDiv p{
+    font-weight: 500;
 }
 
 .outerDiv img{

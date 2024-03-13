@@ -1,0 +1,52 @@
+*{
+    margin: 0;padding: 0;
+}
+
+.cont{
+    height: 500px;
+    width: 450px;
+    /* border: 2px solid red; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.cont h2{
+    margin: 0 10px 30px;
+    font-size: 30px;
+}
+
+.innerDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.ipttitle{
+    height: 30px;
+}
+
+.iptfile{
+    margin: 15px;
+    font-size: 15px;
+}
+
+.txtarea{
+    max-height: 150px;
+    max-width: 450px;
+}
+
+#ipt{
+    margin: 13px;
+    padding: 2px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.uploadbtn{
+    height: 30px;
+    border-radius: 20px;
+    background-color: red;
+    color: white;
+}
