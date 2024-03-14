@@ -1,0 +1,40 @@
+.cont{
+    margin: 30px 0;
+    background-color: aqua;
+}
+
+.heading{
+    height: 50px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.pins{
+    width: 100vw;
+    min-height: 100vh;
+    padding: 10px;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pin{
+    width: 200px;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.pin img{
+    max-height: 400px;
+    min-height: 200px;
+    width: 200px;
+    object-fit: cover;
+    background-color: #ffffffad;
+    border-radius: 20px;
+}
+
+.pin h5{
+    padding: 7px;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinterest</title>
+    <link rel="icon" href="/images/pinterest-icon.png" />
+    <link rel="stylesheet" href="/stylesheets/userposts.css" />
+</head>
+<body>
+    <% include ./nav.ejs%>
+    <div class="cont">
+        <div class="heading">
+            <h2>Your All Pins</h2>
+        </div>
+        <div class="pins">
+            <% user.posts.forEach(function(element){ %>
+                <div class="pin">
+                    <div>    
+                        <img src="/images/uploads/<%= element.image %>" alt="">
+                    </div>
+                    <h5><%= element.postTitle %></h5>
+                </div>
+           <% }) %>
+        </div>
+    </div>
+</body>
+</html>

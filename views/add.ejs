@@ -10,22 +10,36 @@
   <body>
     <div class="cont">
       <h2>Create a post</h2>
-      <form action="">
+      <form action="/createpost" method="post" enctype="multipart/form-data">
         <div class="innerDiv">
-            <div class="iptfile">
-                <input type="file"/>
-            </div>
-          <input type="text" placeholder="Title" id="ipt" class="ipttitle" />
+          <div class="iptfile">
+            <input type="file" name="inputfile" />
+          </div>
+          <input
+            type="text"
+            placeholder="Title"
+            id="ipt"
+            class="ipttitle"
+            name="title"
+          />
           <textarea
             id="ipt"
             class="txtarea"
             cols="30"
             rows="10"
             placeholder="Description"
+            name="description"
           ></textarea>
-          <input type="button" value="Upload" id="ipt" class="uploadbtn" style="border: 2px solid red" />
+          <input
+            type="submit"
+            value="Upload"
+            id="ipt"
+            class="uploadbtn"
+            style="border: 2px solid red"
+          />
         </div>
       </form>
     </div>
+    <script src="/javascripts/add.js"></script>
   </body>
 </html>

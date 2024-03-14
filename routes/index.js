@@ -17,13 +17,35 @@ router.get("/register", function (req, res) {
 });
 
 router.get("/profile", isLoggedIn, async function (req, res) {
-  const user = await userModel.findOne({username: req.session.passport.user});
-  res.render("profile", {user});
+  const user = await userModel
+  .findOne({username: req.session.passport.user})
+  .populate("posts")
+  res.render("profile", {user, nav: true});
+});
+
+router.get("/profile/userposts", isLoggedIn, async function (req, res) {
+  const user = await userModel
+  .findOne({username: req.session.passport.user})
+  .populate("posts")
+  res.render("userposts", {user, nav: true});
 });
 
 router.get("/addpost", isLoggedIn, async function (req, res) {
   const user = await userModel.findOne({username: req.session.passport.user});
-  res.render("add", {user});
+  res.render("add", {user, nav: true});
+});
+
+router.post("/createpost", isLoggedIn, upload.single("inputfile"), async function (req, res) {
+  const user = await userModel.findOne({username: req.session.passport.user});
+  const post = await postModel.create({
+    user: user._id,
+    postTitle: req.body.title,
+    description: req.body.description,
+    image: req.file.filename,
+  });
+  user.posts.push(post._id);
+  await user.save();
+  res.redirect("/profile");
 });
 
 router.get("/nav", isLoggedIn, async function (req, res) {
@@ -38,7 +60,7 @@ router.post("/fileupload", isLoggedIn, upload.single("image"), async function (r
 });
 
 router.get("/feed", function (req, res) {
-  res.render("feed");
+  res.render("feed",{nav: true});
 });
 
 router.post("/register", function (req, res) {

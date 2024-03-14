@@ -1,9 +1,7 @@
 var mongoose = require("mongoose");
-// var plm = require("passport-local-mongoose");
-// var userModel = require("./users");
 
 var postSchema = new mongoose.Schema({
-  postText: {
+  postTitle: {
     type: String,
     required: true,
   },
@@ -11,15 +9,17 @@ var postSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  likes: {
-    type: Array,
-    default: [],
+  description: {
+    type: String,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
+  image: {
+    type: String,
+    required: true,
+  }
 });
 
-// postSchema.plugin(plm);
 module.exports = mongoose.model("Post", postSchema);
