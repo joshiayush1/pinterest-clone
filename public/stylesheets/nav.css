@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: azure;
+    /* background-color: azure; */
 }
 
 .outerDiv a{
