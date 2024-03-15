@@ -64,9 +64,8 @@
   h4 {
     font-size: 13px;
     font-weight: 700;
-    position: relative;
-    left: -60px;
-    margin: 5px;
+    margin: 5px 8px 0 0;
+    color: red;
   }
 
   .btn {
@@ -104,6 +103,6 @@
     margin-left: 25%;
   }
     
-    .upbtn{
+  .upbtn{
     color: black;
   }

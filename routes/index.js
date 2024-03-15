@@ -13,7 +13,7 @@ router.get("/", function (req, res) {
 });
 
 router.get("/register", function (req, res) {
-  res.render("register");
+  res.render("register", {error: req.flash('error')});
 });
 
 router.get("/profile", isLoggedIn, async function (req, res) {
@@ -92,6 +92,7 @@ router.post("/register", function (req, res) {
 router.post("/login",passport.authenticate("local", {
     successRedirect: "/profile",
     failureRedirect: "/register",
+    failureFlash: true
   })
 );
 

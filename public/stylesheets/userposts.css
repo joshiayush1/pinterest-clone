@@ -30,10 +30,7 @@
 }
 
 .pin img{
-    max-height: 400px;
-    min-height: 200px;
     width: 200px;
-    object-fit: cover;
     background-color: #ffffffad;
     border-radius: 20px;
 }

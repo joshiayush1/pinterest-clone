@@ -17,7 +17,9 @@
         <input type="text" name="username" placeholder="Username" class="detail" autocomplete="username" />
         <input type="email" name="email" placeholder="Email" class="detail" autocomplete="email"/><br />
         <input type="password" name="password" placeholder="Password" class="detail" autocomplete="current-password" />
-        <h4>Forgot your password?</h4>
+        <% if(error.length > 0){ %>
+          <h4><%= error %></h4>
+        <% } %>
         <input type="submit" class="btn int" value="Sign in">
       </form>
 
