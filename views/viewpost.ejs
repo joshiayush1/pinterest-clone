@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinterest</title>
+    <link rel="icon" href="/images/pinterest-icon.png" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<style>
+    .cont{
+        height: calc(100vh - 60px);
+        width: 100vw;
+    }
+</style>
+<body>
+  <% include ./nav.ejs%>
+    <div class="cont bg-gray-400 flex justify-center items-center">
+        <div class="post h-5/6 w-4/6 bg-white flex">
+            <div class=" h-full w-1/2 bg-blue-100">
+                <img src="" alt="">
+            </div>
+            <div class="px-14 py-14">
+                <h4 class="my-10">Title</h4>
+                <p class="my-10">Description</p>
+                <h6>@<%= user.username.toLowerCase() %></h6>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

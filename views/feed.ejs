@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pinterest</title>
-    <link rel="stylesheet" href="/stylesheets/feed.css">
+    <title>Document</title>
     <link rel="icon" href="/images/pinterest-icon.png" />
+    <link rel="stylesheet" href="/stylesheets/feed.css">
 </head>
 <body>
-  <% include ./nav.ejs%>
-    
+    <% include ./nav.ejs%>
+    <div class="cont">
+        <div class="pins">
+            <% posts.forEach(function(element){ %>
+                <div class="pin">
+                    <div>
+                        <a href="/profile/userposts/viewpost" alt=""><img src="images/uploads/<%= element.image %>" alt=""></a>
+                    </div>
+                    <h5><%= element.postTitle %></h5>
+                </div>
+                <% }) %>
+        </div>
+    </div>
 </body>
 </html>

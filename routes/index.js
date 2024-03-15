@@ -30,6 +30,13 @@ router.get("/profile/userposts", isLoggedIn, async function (req, res) {
   res.render("userposts", {user, nav: true});
 });
 
+router.get("/profile/userposts/viewpost", isLoggedIn, async function (req, res) {
+  const user = await userModel
+  .findOne({username: req.session.passport.user})
+  .populate("posts")
+  res.render("viewpost", {user, nav: true});
+});
+
 router.get("/addpost", isLoggedIn, async function (req, res) {
   const user = await userModel.findOne({username: req.session.passport.user});
   res.render("add", {user, nav: true});
@@ -59,8 +66,12 @@ router.post("/fileupload", isLoggedIn, upload.single("image"), async function (r
   res.redirect("/profile");
 });
 
-router.get("/feed", function (req, res) {
-  res.render("feed",{nav: true});
+router.get("/feed", isLoggedIn, async function (req, res) {
+  const user = await userModel
+  .findOne({username: req.session.passport.user})
+  const posts = await postModel.find()
+  .populate("user")
+  res.render("feed", {user, posts, nav: true});
 });
 
 router.post("/register", function (req, res) {
