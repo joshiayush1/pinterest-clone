@@ -20,6 +20,10 @@
                         <a href="/profile/userposts/viewpost"><img src="/images/uploads/<%= element.image %>" alt=""></a>
                     </div>
                     <h5><%= element.postTitle %></h5>
+                    <div class="itemsBelowImage">
+                        <img src="/images/uploads/<%= posts.user.profilePicture %>" alt="">
+                        <p><%= posts.user.username.toLowerCase() %></p>
+                    </div>
                 </div>
            <% }) %>
         </div>

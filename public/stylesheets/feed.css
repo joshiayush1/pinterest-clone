@@ -2,30 +2,47 @@
     /* background-color: aqua; */
     height: calc(100vh - 60px);
     width: 100vw;
-    overflow: hidden;
 }
 
 .pins{
     width: 100vw;
     min-height: 100vh;
     padding: 10px;
-    gap: 10px;
+    gap: 3px;
     display: flex;
     flex-wrap: wrap;
+    columns: 6;
+    display: inline-block;
 }
 
 .pin{
-    width: 200px;
+    width: 250px;   
     overflow: hidden;
     word-wrap: break-word;
+    margin: 0 0 25px 0;
 }
 
 .pin img{
-    width: 200px;
+    width: 236px;
     background-color: #ffffffad;
     border-radius: 20px;
 }
 
 .pin h5{
     padding: 7px;
+}
+
+.pin p{
+    padding: 0 0 0 4px;
+    font-size: 12px;
+}
+.itemsBelowImage{
+    display: flex;
+    align-items: center;
+    padding: 7px;
+}
+
+.itemsBelowImage img{
+    width: 25px;
+    height: 25px;
 }
