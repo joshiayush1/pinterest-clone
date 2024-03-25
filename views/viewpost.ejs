@@ -1,38 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pinterest</title>
     <link rel="icon" href="/images/pinterest-icon.png" />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<style>
-    .cont{
-        height: calc(100vh - 60px);
-        width: 100vw;
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      overflow-x: hidden;
     }
-    .post{
-        border-radius: 20px;
+    .cont {
+      min-height: calc(100vh - 60px);
+      width: 100vw;
     }
-    .imgInpost{
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
+    .post {
+      border-radius: 20px;
+      box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
     }
-</style>
-<body>
-  <% include ./nav.ejs%>
-    <div class="cont bg-gray-400 flex justify-center items-center">
-        <div class="post h-5/6 w-4/6 bg-white flex">
-            <div class=" h-full w-1/2 ">
-                <a href=""><img class="imgInpost w-full max-h-full" src="/images/uploads/<%= post.image %>" alt=""></a>
-            </div>
-                <div class="px-14 py-14">
-                    <h4 class="my-10"><%= post.postTitle %></h4>
-                    <p class="my-10"><%= post.description %></p>
-                    <h6>@<%= post.user.username.toLowerCase() %></h6>
-                </div>
+    .imgInpost {
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+    .rightInner {
+      max-width: 50%;
+    }
+  </style>
+  <body>
+    <% include ./nav.ejs%>
+    <div class="cont flex justify-center items-center">
+      <div class="post h-5/6 w-4/6 bg-white flex">
+        <div class="min-h-full w-1/2">
+          <a href=""
+            ><img
+              class="imgInpost w-full"
+              src="/images/uploads/<%= post.image %>"
+              alt=""
+          /></a>
         </div>
+        <div class="rightInner px-14 py-14">
+          <h4 class="my-10"><%= post.postTitle %></h4>
+          <p class="my-10"><%= post.description %></p>
+          <h6>@<%= post.user.username.toLowerCase() %></h6>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

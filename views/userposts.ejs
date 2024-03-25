@@ -15,9 +15,9 @@
         </div>
         <div class="pins">
             <% user.posts.forEach(function(element){ %>
-                <div class="pin">
+                <div class="pin" data-post-id="element._id">
                     <div>    
-                        <a href=""><img src="/images/uploads/<%= element.image %>" alt=""></a>
+                        <a href="/profile/userposts/viewpost/<%= element._id %>"><img src="/images/uploads/<%= element.image %>" alt=""></a>
                     </div>
                     <h5><%= element.postTitle %></h5>
                     <div class="itemsBelowImage">
@@ -28,5 +28,6 @@
            <% }) %>
         </div>
     </div>
+    <script src="/javascripts/profile.js"></script>
 </body>
 </html>
