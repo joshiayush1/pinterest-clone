@@ -33,13 +33,6 @@ router.get("/profile/userposts", isLoggedIn, async function (req, res) {
   res.render("userposts", {user, posts, nav: true});
 });
 
-router.get("/profile/userposts/viewpost", isLoggedIn, async function (req, res) {
-  const user = await userModel
-  .findOne({username: req.session.passport.user})
-  .populate("posts")
-  res.render("viewpost", {user, nav: true});
-});
-
 router.get("/addpost", isLoggedIn, async function (req, res) {
   const user = await userModel.findOne({username: req.session.passport.user});
   res.render("add", {user, nav: true});
@@ -77,6 +70,22 @@ router.get("/feed", isLoggedIn, async function (req, res) {
   res.render("feed", {user, posts, nav: true});
 });
 
+router.get("/profile/userposts/viewpost/:postId", isLoggedIn, async function (req, res) {
+  const user = await userModel
+  .findOne({username: req.session.passport.user})
+  const postId = req.params.postId;
+  const post = await postModel.findById(postId)
+  .populate("user");
+  // console.log(post);
+  // console.log(post.postTitle);
+  // console.log(post.description);
+  // console.log(post.user.username);
+  // const title = post.postTitle;
+  // const description = post.description;
+  // const username = post.user.username;
+  res.render("viewpost", {user, post, nav: true});
+});
+
 router.post("/register", function (req, res) {
   const { username, email, fullname, password } = req.body;
   const userData = new userModel({ username, email, fullname });
@@ -110,6 +119,5 @@ function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();
   res.redirect("/register");
 }
-
 
 module.exports = router;

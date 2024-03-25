@@ -12,19 +12,26 @@
         height: calc(100vh - 60px);
         width: 100vw;
     }
+    .post{
+        border-radius: 20px;
+    }
+    .imgInpost{
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
 </style>
 <body>
   <% include ./nav.ejs%>
     <div class="cont bg-gray-400 flex justify-center items-center">
         <div class="post h-5/6 w-4/6 bg-white flex">
-            <div class=" h-full w-1/2 bg-blue-100">
-                <img src="" alt="">
+            <div class=" h-full w-1/2 ">
+                <a href=""><img class="imgInpost w-full max-h-full" src="/images/uploads/<%= post.image %>" alt=""></a>
             </div>
-            <div class="px-14 py-14">
-                <h4 class="my-10">Title</h4>
-                <p class="my-10">Description</p>
-                <h6>@<%= user.username.toLowerCase() %></h6>
-            </div>
+                <div class="px-14 py-14">
+                    <h4 class="my-10"><%= post.postTitle %></h4>
+                    <p class="my-10"><%= post.description %></p>
+                    <h6>@<%= post.user.username.toLowerCase() %></h6>
+                </div>
         </div>
     </div>
 </body>
