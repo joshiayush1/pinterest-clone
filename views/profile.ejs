@@ -67,6 +67,7 @@
     </section>
 
     <div class="yourpins">
+      <% if(user.posts.length>0){ %>
       <div class="card2outer">
         <div class="card2">
           <a href="/profile/userposts"><img
@@ -79,6 +80,7 @@
           </div>
         </div>
       </div>
+      <% } %>
     </div>
   </div>
     <script src="/javascripts/profile.js"></script>

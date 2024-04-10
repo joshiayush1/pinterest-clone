@@ -32,6 +32,11 @@
     .rightInner {
       max-width: 50%;
     }
+    .rightInner h6 img{
+      width: 25px;
+      height: 25px;
+      border-radius: 99px;
+    }
   </style>
   <body>
     <% include ./nav.ejs%>
@@ -48,7 +53,7 @@
         <div class="rightInner px-14 py-14">
           <h4 class="my-10"><%= post.postTitle %></h4>
           <p class="my-10"><%= post.description %></p>
-          <h6>@<%= post.user.username.toLowerCase() %></h6>
+          <h6><img src="/images/uploads/<%= post.user.profilePicture %>" alt=""><%= post.user.username.toLowerCase() %></h6>
         </div>
       </div>
     </div>
